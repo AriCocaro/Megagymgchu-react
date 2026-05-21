@@ -1,0 +1,71 @@
+@use "./Variables" as vars;
+@use "./Mixins" as mixin;
+@use "./Display" as display;
+
+.cuerpo{
+  form.d-flex {
+    width: 100%;
+    max-width: 50%;
+    margin: 0 auto;
+    gap: 0.5rem; // separación entre input y botón
+    button{
+      @include mixin.EstiloBoton;
+    }
+  }
+
+  .Productos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  padding: 2rem;
+  background-color: vars.$Negro;
+
+    .card {
+      aspect-ratio: 4 / 3;
+      width: 100%;
+      max-width: 300%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid vars.$Amarillo;
+      background-color: vars.$Negro;
+      text-align: center;
+      color: vars.$Blanco;
+
+      .card-img-top {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: contain;
+      }
+
+      .card-body {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1rem;
+      }
+      .card-text{
+        margin: 0px;
+        padding: 8px;
+      }
+
+      .Boton {
+        @include mixin.EstiloBoton;
+        margin-top: auto;
+      }
+    }
+  }
+}
+ 
+
+@include display.responsive(mobile) {
+  .d-flex{
+    max-width: 100%;
+    margin: 0px;
+  }
+  .texto-buscar {
+    display: none;
+  }
+}

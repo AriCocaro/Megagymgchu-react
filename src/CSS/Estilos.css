@@ -1,0 +1,706 @@
+/*Paleta de colores*/
+/*Fuente*/
+/*media querys*/
+/*BOTONES*/
+body {
+  background-color: black;
+  color: white;
+  font-family: "montserrat";
+  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+header .Encabezado {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-height: 130px;
+  background-color: black;
+  padding: 0 20px;
+  flex-wrap: nowrap;
+}
+header .Encabezado a {
+  display: block;
+}
+header .Encabezado figure {
+  margin: 0;
+}
+header .Encabezado figure .LogoInst {
+  max-height: 130px;
+  display: block;
+  padding: 10px;
+}
+header .Encabezado .PagesList {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-around;
+  margin-left: 0;
+  width: auto;
+}
+header .Encabezado .PagesList .topnav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+header .Encabezado .PagesList .topnav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+header .Encabezado .PagesList .topnav .ItemNav {
+  color: white;
+  text-decoration: none;
+}
+header .Encabezado .PagesList .topnav a {
+  text-decoration: none;
+  color: white;
+  padding: 14px 16px;
+  display: block;
+  text-align: center;
+}
+header .Encabezado .PagesList .topnav a:hover {
+  background-color: rgb(225, 202, 58);
+  color: black;
+}
+header .Encabezado .PagesList .topnav .Redes {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding-right: 10px;
+}
+header .Encabezado .PagesList .topnav .X {
+  display: none;
+}
+header .Encabezado .TNMF-icon {
+  font-size: 2rem;
+  color: white;
+  padding: 1rem;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  cursor: pointer;
+  z-index: 9999;
+  background: transparent;
+  border: none;
+  display: none;
+}
+
+main {
+  margin-top: 100px;
+}
+main h1 {
+  margin-top: 50px;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  text-align: center;
+}
+main p {
+  margin-top: 25px;
+  font-size: 1rem;
+  padding: 2rem;
+}
+
+footer {
+  margin-top: 100px;
+}
+footer .DescApp {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 20px;
+  padding: 0 20px;
+  position: relative;
+  background-image: url(../Assets/Imagenes/ImagenesGym/frente\ 1\ editado.png);
+  background-size: cover;
+  background-position: 20% 30%;
+  margin-top: 50px;
+}
+footer .DescApp figure {
+  margin: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  transform: translateY(-33%);
+  position: relative;
+  z-index: 1;
+}
+footer .DescApp img {
+  width: 500px;
+  height: auto;
+}
+footer .DescApp .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 0;
+  color: black;
+}
+footer .DescApp .content h5 {
+  color: white;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+footer .DescApp .botones {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 50px;
+}
+footer .DescApp .Boton {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: rgb(225, 202, 58);
+  border: none;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+footer .DescApp .Boton:hover {
+  background-color: black;
+  color: rgb(225, 202, 58);
+}
+footer .Pie {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 300px) and (max-width: 767px) {
+  header {
+    position: fixed;
+  }
+  header .Encabezado {
+    position: relative;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  header .Encabezado figure {
+    width: 100%;
+  }
+  header .Encabezado .TNMF-icon {
+    display: block;
+  }
+  header .Encabezado .PagesList {
+    width: 100%;
+  }
+  header .Encabezado .PagesList .topnav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: black;
+    padding: 0;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  header .Encabezado .PagesList .topnav.open {
+    display: flex;
+  }
+  header .Encabezado .PagesList .topnav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  header .Encabezado .PagesList .topnav ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+  }
+  header .Encabezado .PagesList .topnav ul a {
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    display: block;
+    text-align: left;
+  }
+  header .Encabezado .PagesList .topnav ul a:hover {
+    background-color: rgb(225, 202, 58);
+    color: black;
+  }
+}
+@media (min-width: 1025px) {
+  header {
+    position: fixed;
+  }
+  header .TNMF-icon {
+    display: none !important;
+  }
+  header .PagesList {
+    width: auto;
+    font-weight: bold;
+  }
+  header .PagesList .topnav {
+    display: flex !important;
+    flex-direction: row !important;
+    background-color: transparent !important;
+  }
+  header .PagesList ul {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  header .PagesList .ItemNav {
+    color: rgb(225, 202, 58);
+  }
+  header #mySidebar {
+    display: flex !important;
+    position: static;
+    height: auto;
+    background-color: transparent;
+    padding: 0;
+    width: auto;
+  }
+  header .X {
+    display: none !important;
+  }
+}
+/*main*/
+@media (min-width: 300px) and (max-width: 767px) {
+  main .cuerpo h1 {
+    margin-top: 100px;
+  }
+}
+/*footer*/
+@media (min-width: 300px) and (max-width: 767px) {
+  footer .DescApp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-position: 100%;
+    padding: 20px;
+    position: relative;
+  }
+  footer .DescApp figure {
+    transform: translateY(-50%);
+    position: relative;
+    z-index: 2;
+    margin-bottom: -30px;
+  }
+  footer .DescApp figure img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+  footer .DescApp .content {
+    text-align: center;
+    align-items: center;
+    padding: 0;
+    z-index: 1;
+  }
+}
+.cuerpo h1 {
+  /*margin-top: 100px;*/
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  text-align: center;
+}
+.cuerpo p {
+  margin-top: 25px;
+  font-size: 1rem;
+  padding: 2rem;
+}
+.cuerpo .Ubicacion .ContenedorFrente {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.cuerpo .Ubicacion .ContenedorFrente .GymFrente, .cuerpo .Ubicacion .ContenedorFrente .Map {
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 768px) {
+  .cuerpo .Ubicacion .ContenedorFrente {
+    flex-wrap: nowrap;
+  }
+  .cuerpo .Ubicacion .GymFrente, .cuerpo .Ubicacion .Map {
+    width: 50%;
+    height: 400px;
+  }
+}
+.cuerpo .Instalaciones img {
+  width: auto;
+  height: calc(100vh - 150px);
+  object-fit: contain;
+}
+.cuerpo .Staff {
+  padding: 2rem;
+}
+.cuerpo .Staff h1, .cuerpo .Staff p {
+  text-align: center;
+}
+.cuerpo .Staff .TarjetasStaff {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 1rem 0;
+  -webkit-overflow-scrolling: touch;
+}
+.cuerpo .Staff .TarjetasStaff .StaffUnipers {
+  flex: 0 0 auto;
+  width: 250px;
+  height: 250px;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  scroll-snap-align: center;
+  cursor: pointer;
+}
+.cuerpo .Staff .TarjetasStaff .StaffUnipers img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.cuerpo .Staff .TarjetasStaff .StaffUnipers img.AriNati {
+  object-position: center top;
+}
+.cuerpo .Staff .TarjetasStaff .StaffUnipers .CardStaffOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.cuerpo .Staff .TarjetasStaff .StaffUnipers .CardStaffOverlay .OverNombre {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+.cuerpo .Staff .TarjetasStaff .StaffUnipers .CardStaffOverlay .OverText {
+  font-size: 12px;
+  text-align: center;
+}
+.cuerpo .Staff .TarjetasStaff .StaffUnipers:hover .CardStaffOverlay {
+  opacity: 1;
+}
+.cuerpo .Contacto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px 0px 0px 0px;
+}
+.cuerpo .Contacto form {
+  font-size: 1rem;
+  padding: 2rem;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.cuerpo .Contacto form .mb-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.cuerpo .Contacto form label {
+  text-align: center;
+}
+.cuerpo .Contacto form .Nombre, .cuerpo .Contacto form .Consulta, .cuerpo .Contacto form .mb-3:nth-child(1), .cuerpo .Contacto form .mb-3:nth-child(4) {
+  grid-column: span 2;
+}
+.cuerpo .Contacto form .form-check {
+  text-align: center;
+}
+.cuerpo .Contacto form .Contactame, .cuerpo .Contacto form .col-auto {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.cuerpo .Contacto form .form-check-input:checked {
+  background-color: rgb(225, 202, 58);
+  border-color: black;
+  box-shadow: none;
+}
+.cuerpo .Contacto form .Boton {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: rgb(225, 202, 58);
+  border: none;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+.cuerpo .Contacto form .Boton:hover {
+  background-color: black;
+  color: rgb(225, 202, 58);
+}
+
+.DtoTecnico {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.DtoTecnico img {
+  /*height: calc(100vh - 150px);*/
+  width: 100%;
+  object-fit: contain;
+}
+
+.cuerpo form.d-flex {
+  width: 100%;
+  max-width: 50%;
+  margin: 0 auto;
+  gap: 0.5rem;
+}
+.cuerpo form.d-flex button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: rgb(225, 202, 58);
+  border: none;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.cuerpo form.d-flex button:hover {
+  background-color: black;
+  color: rgb(225, 202, 58);
+}
+.cuerpo .Productos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  padding: 2rem;
+  background-color: black;
+}
+.cuerpo .Productos .card {
+  aspect-ratio: 4/3;
+  width: 100%;
+  max-width: 300%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgb(225, 202, 58);
+  background-color: black;
+  text-align: center;
+  color: white;
+}
+.cuerpo .Productos .card .card-img-top {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+}
+.cuerpo .Productos .card .card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.cuerpo .Productos .card .card-text {
+  margin: 0px;
+  padding: 8px;
+}
+.cuerpo .Productos .card .Boton {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: rgb(225, 202, 58);
+  border: none;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: auto;
+}
+.cuerpo .Productos .card .Boton:hover {
+  background-color: black;
+  color: rgb(225, 202, 58);
+}
+
+@media (min-width: 300px) and (max-width: 767px) {
+  .d-flex {
+    max-width: 100%;
+    margin: 0px;
+  }
+  .texto-buscar {
+    display: none;
+  }
+}
+.FormIS {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  padding: 2rem;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.FormIS .Boton {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: rgb(225, 202, 58);
+  border: none;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.FormIS .Boton:hover {
+  background-color: black;
+  color: rgb(225, 202, 58);
+}
+
+@media (min-width: 300px) and (max-width: 767px) {
+  .cuerpo h1 {
+    margin: 0px;
+  }
+}
+body main section {
+  padding-top: 10px;
+}
+body main .Pescadores {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+body main .Pescadores h1, body main .Pescadores p, body main .Pescadores img {
+  margin: 0;
+}
+body main .Pescadores img {
+  max-height: 60vh;
+  object-fit: contain;
+}
+body main .Megarun2024 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+body main .Megarun2024 h1, body main .Megarun2024 p, body main .Megarun2024 img {
+  margin: 0;
+}
+body main .Megarun2024 img {
+  max-height: 20vh;
+  object-fit: contain;
+  padding: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+body main .Megarun2024 img:hover {
+  transform: scale(1.5);
+}
+
+.PrimerVideo {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.PrimerVideo video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.PrimerVideo .TextoDelVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  text-align: center;
+  text-shadow: 2px 2px 4px black;
+}
+.PrimerVideo .TextoDelVideo h1 {
+  font-size: 2.5rem;
+}
+.PrimerVideo .TextoDelVideo h2 {
+  font-size: 1.25rem;
+}
+.PrimerVideo .TextoDelVideo .Amarillo {
+  color: rgb(225, 202, 58);
+  background-color: transparent;
+}
+.PrimerVideo .TextoDelVideo .Boton {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: rgb(225, 202, 58);
+  border: none;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.PrimerVideo .TextoDelVideo .Boton:hover {
+  background-color: black;
+  color: rgb(225, 202, 58);
+}
+
+@media (min-width: 300px) and (max-width: 767px) {
+  main {
+    margin: 0px;
+  }
+  main .PrimerVideo {
+    margin-top: 0px;
+  }
+  main .TextoDelVideo h1 {
+    font-size: 2rem;
+  }
+  main .TextoDelVideo h2 {
+    font-size: 1rem;
+  }
+  main .TextoDelVideo .Boton {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
+
+/*# sourceMappingURL=Estilos.css.map */

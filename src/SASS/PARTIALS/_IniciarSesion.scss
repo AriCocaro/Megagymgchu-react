@@ -1,0 +1,18 @@
+@use "./Variables" as vars;
+@use "./Display" as display;
+@use "./Mixins" as mixin;
+
+.FormIS{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ font-size: 1rem;
+ padding: 2rem;
+ margin-left: 15px;
+ margin-right: 15px;
+ .Boton{
+    @include mixin.EstiloBoton
+ }
+
+}

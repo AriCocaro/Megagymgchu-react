@@ -1,0 +1,200 @@
+@use "./Variables" as vars;
+@use "./Mixins" as mixin;
+
+body {
+  background-color: vars.$Negro;
+  color: vars.$Blanco;
+  font-family: vars.$Fuente;
+  font-size: clamp(0.9rem, 1.5vw, 1.2rem);;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  .Encabezado {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-height: 130px;
+    background-color: vars.$Negro;
+    padding: 0 20px;
+    flex-wrap: nowrap;
+
+    a {
+      display: block;
+    }
+
+    figure {
+      margin: 0;
+
+      .LogoInst {
+        max-height: 130px;
+        display: block;
+        padding: 10px;
+      }
+    }
+
+    .PagesList {
+      flex-grow: 1;
+      display: flex;
+      justify-content: space-around;
+      margin-left: 0;
+      width: auto;
+
+      .topnav {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        ul {
+          list-style: none;
+          display: flex;
+          gap: 1rem;
+        }
+
+        .ItemNav {
+          color: vars.$Blanco;
+          text-decoration: none;
+        }
+
+        a {
+          text-decoration: none;
+          color: white;
+          padding: 14px 16px;
+          display: block;
+          text-align: center;
+        }
+
+        a:hover {
+          background-color: vars.$Amarillo;
+          color: black;
+        }
+
+        .Redes {
+          display: flex;
+          gap: 8px;
+          align-items: center;
+          padding-right: 10px;
+        }
+
+        .X {
+          display: none;
+        }
+      }
+    }
+
+    .TNMF-icon {
+      font-size: 2rem;
+      color: vars.$Blanco;
+      padding: 1rem;
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      cursor: pointer;
+      z-index: 9999;
+      background: transparent;
+      border: none;
+      display: none; // Por defecto oculto (desktop)
+    }
+  }
+}
+
+
+
+
+
+main {
+  margin-top: 100px;
+   h1 {
+   
+    margin-top: 50px;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    text-align: center;
+  }
+  p{
+    margin-top: 25px;
+    font-size: 1rem;
+    padding: 2rem;
+  }
+}
+
+
+footer {
+  margin-top: 100px;
+  .DescApp {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: start;
+    gap: 20px;
+    padding: 0 20px;
+    position: relative;
+    background-image: url(../Assets/Imagenes/ImagenesGym/frente\ 1\ editado.png);
+    background-size: cover;
+    background-position: 20% 30%;
+    margin-top: 50px;
+    
+ 
+
+    figure {
+      margin: 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      transform: translateY(-33%);
+      position: relative;
+      z-index: 1;
+    }
+
+    img {
+      width: 500px;
+      height: auto;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      padding: 20px 0;
+      color: vars.$Negro;
+      h5 {
+       color: white;
+       text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+     }
+    }
+
+    .botones {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 50px;
+
+    }
+
+    .Boton {
+      @include mixin.EstiloBoton;
+      white-space: nowrap;
+    }
+  }
+
+  .Pie{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+  }
+}

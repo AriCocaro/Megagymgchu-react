@@ -1,0 +1,202 @@
+@use "./Variables" as vars;
+@use "./Display" as display;
+@use "./Mixins" as mixin;
+
+.cuerpo{
+ h1 {
+    /*margin-top: 100px;*/
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    text-align: center;
+  }
+  p{
+    margin-top: 25px;
+    font-size: 1rem;
+    padding: 2rem;
+  }
+
+
+  .Ubicacion {
+    .ContenedorFrente {
+     display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap; // permite que se acomoden en mobile
+
+      .GymFrente, .Map {
+       width: 100%;
+        max-width: 500px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+    // Media query para pantallas grandes: se colocan en fila
+  @media (min-width: 768px) {
+   .Ubicacion .ContenedorFrente {
+      flex-wrap: nowrap; // evita que se apilen
+    }
+
+    .Ubicacion .GymFrente,  .Ubicacion .Map {
+      width: 50%;
+      height: 400px; // podés ajustar según tu necesidad
+    }
+  }
+
+  .Instalaciones{
+    img{
+      width: auto;
+      height: calc(100vh - 150px);
+      object-fit: contain;
+    }
+  }
+
+  .Staff {
+   padding: 2rem;
+
+    h1, p {
+     text-align: center;
+    }
+
+   .TarjetasStaff {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 1rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 1rem 0;
+      -webkit-overflow-scrolling: touch;
+
+      .StaffUnipers {
+        flex: 0 0 auto;
+        width: 250px;
+        height: 250px;
+        position: relative;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        scroll-snap-align: center;
+        cursor: pointer;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          &.AriNati{
+            object-position: center top;
+          }
+        }
+
+
+        .CardStaffOverlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          background-color: rgba(0, 0, 0, 0.6);
+          color: white;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          padding: 15px;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+
+          .OverNombre {
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+          }
+
+          .OverText {
+            font-size: 12px;
+            text-align: center;
+          }
+        }
+
+        &:hover .CardStaffOverlay {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .Contacto {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 0px 0px 0px;
+    
+   
+
+
+
+   form {
+ 
+      font-size: 1rem;
+      padding: 2rem;
+      display: grid;
+      justify-content: center;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+  
+      
+
+      // Cada campo es un grid de 1 columna
+     .mb-3 {
+        display: grid;
+        grid-template-columns: 1fr;
+        
+      }
+
+        
+      label {
+        text-align: center;
+      }
+
+        
+      .Nombre,  .Consulta, .mb-3:nth-child(1), .mb-3:nth-child(4) { 
+        grid-column: span 2;
+      }
+
+      .form-check {
+        text-align: center;
+      }
+
+      .Contactame, .col-auto {
+        grid-column: span 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+      }
+        
+      .form-check-input:checked {
+        background-color: vars.$Amarillo;
+        border-color: vars.$Negro;
+        box-shadow: none;
+      }
+
+
+
+      .Boton {
+        @include mixin.EstiloBoton;
+        margin-top: 1rem;
+      }
+
+        
+    }
+  }
+ 
+}

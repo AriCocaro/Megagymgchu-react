@@ -1,0 +1,40 @@
+@use "./Variables" as vars;
+
+/*media querys*/
+@mixin responsive($breakpoint) {
+    @if $breakpoint == mobile { 
+        @media (min-width: 300px) and (max-width: 767px) {
+            @content;
+        }
+    } @else if $breakpoint == tablet {
+        @media (min-width: 768px) and (max-width: 1024px) { // corregido "min-width"
+            @content;
+        }
+    } @else if $breakpoint == desktop {
+        @media (min-width: 1025px) {
+            @content;
+        }
+    }
+}
+
+
+
+/*BOTONES*/
+@mixin EstiloBoton{
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: vars.$Amarillo;
+    border: none;
+    color: vars.$Negro;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &:hover{
+        background-color: vars.$Negro;
+        color: vars.$Amarillo;
+
+    }
+}
+  
+  

@@ -1,0 +1,80 @@
+@use "./Variables" as vars;
+@use "./Mixins" as mixin;
+@use "./Display" as display;
+
+
+
+
+.PrimerVideo {
+  position: relative;
+  width: 100%;
+  height: 100vh; // Se adapta al alto del viewport
+  overflow: hidden;
+
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+  }
+
+  .TextoDelVideo {
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    text-align: center;
+    text-shadow: 2px 2px 4px black;
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+    }
+
+    .Amarillo{
+      color: vars.$Amarillo;
+      background-color: transparent;
+    }
+
+    .Boton {
+      @include mixin.EstiloBoton;
+    }
+  }
+}
+
+@include display.responsive(mobile){
+  main{
+    margin: 0px;
+    .PrimerVideo{
+      margin-top: 0px;
+    }
+    .TextoDelVideo {
+    h1 {
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1rem;
+    }
+
+    .Boton {
+      font-size: 0.9rem;
+      padding: 10px 20px;
+    }
+  }
+  }
+  
+}

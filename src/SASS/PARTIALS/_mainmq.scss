@@ -1,0 +1,12 @@
+@use "./Variables" as vars;
+@use "./Display" as display;
+@use "./Mixins" as mixin;
+
+@include display.responsive(mobile){
+  .cuerpo{
+    h1{
+        margin: 0px;
+    }
+
+  }
+}
